@@ -16,7 +16,7 @@ input "lib" do
 end
 
 
-input "vendor" do
+input "vendor/js" do
   match "*.js" do
     filter(
       Rake::Pipeline::OrderingConcatFilter,
@@ -30,12 +30,18 @@ input "vendor" do
   end
 end
 
+input "vendor/css" do
+  match "*.css" do
+    filter Rake::Pipeline::OrderingConcatFilter, [], "vendor.css"
+  end
+end
+
 input "tests" do
   match "index.html" do
     copy
   end
 
-  match "*_test.js" do
+  match "**/*_test.js" do
     filter Rake::Pipeline::OrderingConcatFilter, [], "tests.js"
   end
 end

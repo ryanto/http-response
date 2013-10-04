@@ -1,0 +1,43 @@
+
+  //<script type="text/x-handlebars" data-template-name="loading">
+    //Waiting for HTTP Response that matches /people
+  //</script>
+  //<script type="text/x-handlebars" data-template-name="people">
+    //{{#each person in controller}}
+      //{{person.name}}<br />
+    //{{/each}}
+  //</script>
+    //App = Ember.Application.create();
+
+    //App.ApplicationAdapter = DS.RESTAdapter;
+
+    //App.Router.map(function() {
+      //this.resource('people', { path: '/' });
+    //});
+
+    //App.Person = DS.Model.extend({
+      //name: DS.attr('string')
+    //});
+
+    //App.PeopleRoute = Ember.Route.extend({
+      //model: function() {
+        //return this.store.find('person');
+      //}
+    //});
+
+    //App.LoadingRoute = Ember.Route.extend();
+
+    //// fake http stuff
+
+    //var responder = new HttpResponse();
+
+    //var mockResponse = {
+      //people: [
+        //{ id: 1, name: 'ryan' },
+        //{ id: 2, name: 'bob' }
+      //]
+    //};
+
+    //setTimeout(function() {
+      //responder.stub("get", "/people", mockResponse);
+    //}, 2000);
