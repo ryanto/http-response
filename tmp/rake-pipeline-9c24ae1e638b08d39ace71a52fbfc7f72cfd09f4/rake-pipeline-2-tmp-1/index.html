@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <script src="/vendor.js"></script>
+    <script src="/http-response.js"></script>
+    <script src="/tests.js"></script>
+  </head>
+  <body></body>
+  <script>
+    var responder = new HttpResponse();
+
+    $.ajax("/testing").then(
+      function(d) { debugger; },
+      function(e) { debugger; }
+    );
+
+    setTimeout(function() {
+      responder.stub("get", "/testing", { hello: "world" });
+    }, 10000);
+  </script>
+</html>
